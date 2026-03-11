@@ -6,6 +6,8 @@ import 'package:taghyeer_assessment/core/theme/theme_cubit.dart';
 import 'package:taghyeer_assessment/features/auth/bloc/auth_bloc.dart';
 import 'package:taghyeer_assessment/features/auth/bloc/auth_event.dart';
 import 'package:taghyeer_assessment/features/auth/repo/auth_repo.dart';
+import 'package:taghyeer_assessment/features/post/bloc/posts_bloc.dart';
+import 'package:taghyeer_assessment/features/post/repo/posts_repo.dart';
 import 'package:taghyeer_assessment/features/products/bloc/products_bloc.dart';
 import 'package:taghyeer_assessment/features/products/repo/products_repo.dart';
 import 'package:taghyeer_assessment/features/splash_screen.dart';
@@ -29,6 +31,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) => ProductsBloc(ProductsRepo())..add(ProductsFetched()),
+        ),
+        BlocProvider(
+          create: (_) => PostsBloc(PostsRepo())..add(PostsFetched()),
         ),
       ],
       child: BlocBuilder<ThemeCubit, ThemeMode>(
