@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:taghyeer_assessment/features/home/cubit/navigation_cubit.dart';
+import 'package:taghyeer_assessment/core/cubit/navigation_cubit.dart';
 import 'package:taghyeer_assessment/features/post/presentation/posts_tab.dart';
 import 'package:taghyeer_assessment/features/products/presentation/products_tab.dart';
 import 'package:taghyeer_assessment/features/settings/settings_tab.dart';
@@ -13,13 +13,11 @@ class MainScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Taghyeer Assessment')),
-
       //==========================
       // Body
       //==========================
       body: _tabs[context.watch<NavigationCubit>().currentIndex],
-      
+
       //==========================
       // Nav bar
       //==========================
